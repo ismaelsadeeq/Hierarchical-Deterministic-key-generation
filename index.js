@@ -19,6 +19,8 @@ let seedHex = seed.toString('hex');
 //Generating the root of the HD Tree, whereby the MasterPrivate and MasterPublic Keys can be generated
 const root = hdKey.fromMasterSeed(Buffer.from(seedHex,'hex'));
 
+//Generate extended public key
+console.log("Extended Public key: ",root.publicExtendedKey)
 //Generate the Master Private Key
 const masterPrivateKey = root.privateKey.toString('hex')
 
@@ -53,6 +55,8 @@ doubleHashedPublicKey.copy(add,1);
 const address = base58Check.encode(doubleHashedPublicKey);
 
 console.log('Base58Check: ' + address);
+console.log(address.publicExtendedKey)
+
 
 
 
