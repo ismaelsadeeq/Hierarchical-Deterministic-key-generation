@@ -55,7 +55,6 @@ doubleHashedPublicKey.copy(add,1);
 const address = base58Check.encode(doubleHashedPublicKey);
 
 console.log('Base58Check: ' + address);
-console.log(address.publicExtendedKey)
 
 
 
